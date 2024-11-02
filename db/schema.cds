@@ -2,7 +2,7 @@ namespace riskmanagement;
 using{
    managed,cuid,User,sap.common.CodeList
 } from'@sap/cds/common';
-entity Risks:cuid,managed {
+entity Risks:cuid,managed {
     title:String(100);
     owner:String; 
     prio:Association to Priority; 
@@ -18,7 +18,7 @@ entity Mitigations:cuid,managed{
     timeline:String;
     risks:Association to many Risks on risks.miti = $self;
 }
-entity Priority:CodeList{
+entity Priority:CodeList{
    key code:String enum{
       high ='H'; medium ='M'; low ='L';
    };
